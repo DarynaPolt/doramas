@@ -1,0 +1,280 @@
+/* Базові стилі */
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background: #fafafa;
+  scroll-behavior: smooth;
+}
+
+/* 🔝 Навігаційна панель */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 40px;
+  z-index: 1000;
+}
+
+.logo {
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  transition: color 0.3s, border-bottom 0.3s;
+  border-bottom: 2px solid transparent;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: #a04ddf;
+  border-bottom: 2px solid #a04ddf;
+}
+
+/* Секції */
+.section {
+  min-height: 100vh;
+  padding: 120px 20px 60px;
+  text-align: center;
+}
+
+/* Кнопка */
+.scroll-btn {
+  background: #a04ddf;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background 0.3s;
+}
+
+.scroll-btn:hover {
+  background: #8d35d0;
+}
+
+/* 🔹 Бургер-іконка */
+.burger {
+  display: none; /* спочатку прихована */
+  font-size: 1.8rem;
+  cursor: pointer;
+  user-select: none;
+}
+
+/* --- 📱 Адаптивна частина --- */
+@media (max-width: 768px) {
+  /* коли ширина екрану менше 768px */
+
+  .nav-links {
+    position: absolute;
+    top: 60px; /* трохи нижче navbar */
+    left: 0;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    padding: 15px 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    transform: translateY(-200%);
+    transition: transform 0.3s ease;
+  }
+
+  /* показує меню, коли воно активне */
+  .nav-links.active {
+    transform: translateY(0);
+  }
+
+  /* показує бургер */
+  .burger {
+    display: block;
+  }
+}
+
+/* 🏠 Головна секція */
+.home-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+  padding: 100px 10%;
+  min-height: 90vh;
+  background: linear-gradient(120deg, #ffe6f9, #e0f0ff);
+  transition: background 0.5s ease;
+}
+
+/* Ліва частина */
+.home-left {
+  flex: 1;
+}
+
+.home-left h1 {
+  font-size: 2.2rem;
+  line-height: 1.4;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.scroll-btn {
+  background: #a46cf4;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 30px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.scroll-btn:hover {
+  background: #c39bff;
+  transform: scale(1.05);
+}
+
+/* Права частина — "Дорама дня" */
+.home-right {
+ flex: 1;
+  text-align: center;
+  background: white;
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  max-width: 350px;
+  animation: fadeInUp 1s ease-out; /* ✨ ось тут магія */
+}
+
+.home-right img {
+  width: 100%;
+  height: 400px; /* 👈 фіксована висота */
+  object-fit: cover; /* 👈 зберігає пропорції, але заповнює блок */
+  border-radius: 15px;
+  margin-bottom: 15px;
+  animation: fadeIn 1s ease-in-out; /* 👈 ось це робить магію */
+}
+
+.more-btn {
+  display: inline-block;
+  margin-top: 10px;
+  color: #a46cf4;
+  text-decoration: none;
+  font-weight: 600;
+}
+.more-btn:hover {
+  text-decoration: underline;
+}
+
+/* 🎬 Плавна поява всього блоку "Дорама дня" */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px); /* трохи нижче при старті */
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+header {
+  width: 100%;
+  background-color: #fff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 60px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+/* ЛОГО */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo img {
+  width: 36px;
+  height: 36px;
+}
+
+.logo span {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #a46cf4;
+}
+
+/* НАВІГАЦІЯ */
+.nav-links {
+  display: flex;
+  gap: 90px;
+  justify-content: center;
+  flex: 1;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  font-size: 1rem;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  color: #a46cf4;
+}
+
+/* Для адаптивності */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    padding: 10px 20px;
+  }
+
+  .nav-links {
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+
+  .logo img {
+    width: 32px;
+    height: 32px;
+  }
+
+  .logo span {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .nav-links {
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+}
