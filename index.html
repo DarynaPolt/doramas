@@ -39,10 +39,58 @@
   </section>
 
   <!-- 🎭 Тест -->
-  <section id="test" class="section">
-    <h2>Який ти колір?</h2>
-    <p>Тут буде інтерактивний тест...</p>
-  </section>
+<section id="color-test" class="section color-test-section">
+  <h2>🎨 Тест "Який ти колір?"</h2>
+
+  <div id="start-screen">
+    <button id="start-test-btn">Почати тест</button>
+  </div>
+
+  <div id="progress" class="hidden">
+    <div class="progress-dots" id="progress-dots"></div>
+  </div>
+
+  <div id="questions" class="hidden">
+    <div class="question">
+      <h3>1️⃣ Ти більше інтроверт чи екстраверт?</h3>
+      <button class="answer" data-value="спокійний">Інтроверт 🌙</button>
+      <button class="answer" data-value="енергійний">Екстраверт ☀️</button>
+    </div>
+
+    <div class="question hidden">
+      <h3>2️⃣ Що тебе надихає?</h3>
+      <button class="answer" data-value="творчий">Музика або мистецтво 🎵</button>
+      <button class="answer" data-value="спокійний">Природа 🌿</button>
+      <button class="answer" data-value="енергійний">Люди й події 🌈</button>
+    </div>
+
+    <div class="question hidden">
+      <h3>3️⃣ Твій улюблений час доби?</h3>
+      <button class="answer" data-value="спокійний">Ранок ☀️</button>
+      <button class="answer" data-value="творчий">Вечір 🌇</button>
+      <button class="answer" data-value="енергійний">Ніч 🌌</button>
+    </div>
+
+    <div class="question hidden">
+      <h3>4️⃣ Як би ти описав свій настрій сьогодні?</h3>
+      <button class="answer" data-value="енергійний">Веселий 😄</button>
+      <button class="answer" data-value="спокійний">Спокійний 😌</button>
+      <button class="answer" data-value="творчий">Мрійливий 🎨</button>
+    </div>
+
+    <div class="question hidden">
+      <h3>5️⃣ Що для тебе найважливіше?</h3>
+      <button class="answer" data-value="спокійний">Гармонія 💧</button>
+      <button class="answer" data-value="енергійний">Розвиток 🔥</button>
+      <button class="answer" data-value="творчий">Самовираження 🌟</button>
+    </div>
+  </div>
+
+  <div id="color-result" class="hidden">
+    <h3>🌈 Твій колір — <span id="color-name"></span>!</h3>
+    <p id="color-desc"></p>
+  </div>
+</section>
 
   <!-- 🎨 Палітра -->
   <section id="palette" class="section">
